@@ -1,33 +1,58 @@
-# Recipes App ✨
-![Android-kotlin](https://img.shields.io/badge/Android-Kotlin-blue.svg) ![glide](https://img.shields.io/badge/Library-Glide-orange.svg)
+# CookEase
 
-## Introduction
-<li>Welcome to the Recipe App! This Android application is built with Kotlin and is designed to help users discover new recipes.</li>
+A recipe app I built for my final year project. The idea is simple, instead of searching recipes by name, you search by what ingredients you already have by using ingredient name search or camera to detect what type of ingredient you have.
 
-## Prerequisites
-<li>Android Studio</li>
-<li>Kotlin SDK</li>
+Built with Kotlin for Android.
 
-## Mobile App Screenshots 📸
-<p float="center">
-  <img src="https://github.com/YashNagare/Recipes-App/blob/master/screenshots/Splash_Screen.jpeg" title="Splash Screen" height="450px" width="225px">
-  <img src="https://github.com/YashNagare/Recipes-App/blob/master/screenshots/Homepage.jpeg" title="Home Page" height="450px" width="225px">
-  <img src="https://github.com/YashNagare/Recipes-App/blob/master/screenshots/Search.jpeg" title="Search Page" height="450px" width="225px">
-  <img src="https://github.com/YashNagare/Recipes-App/blob/master/screenshots/Category.jpeg" title="Prediction Page" height="450px" width="225px">
-  <img src="https://github.com/YashNagare/Recipes-App/blob/master/screenshots/Recipe_Ingredients.jpeg" title="Chatbot-1" height="450px" width="225px">
-  <img src="https://github.com/YashNagare/Recipes-App/blob/master/screenshots/Recipe_Steps.jpeg" title="Chatbot-2" height="450px" width="225px">
+## Screenshots
+
+<p float="left">
+  <img src="screenshots/Login.png" width="200">
+  <img src="screenshots/Homepage.png" width="200">
+  <img src="screenshots/Searching.png" width="200">
+  <img src="screenshots/RecipeSearchIngredient.png" width="200">
+  <img src="screenshots/Recipe.png" width="200">
+  <img src="screenshots/RecipeTutorial.png" width="200">
 </p>
 
-## Tech Stack 💻
-<ul>
-<li>Kotlin</li>
-<li>XML</li>
-</ul>
+## What it does
 
-## Credits
-This project was developed with the help of the following YouTube tutorial:
-<ul><li><a href="https://www.youtube.com/watch?v=FtyEIR_ox6Y&t">Recipes App Tutorial in Hindi</a> by <em>Neat Roots</em></li></ul>
+- Sign up / login (using Firebase Auth)
+- Browse recipes on the home page, sorted by category
+- Search for recipes
+- View full recipe details (ingredients, description, steps)
+- Recipes are stored locally using Room/SQLite so you can browse without internet
+- Ingredient scanning using a TensorFlow Lite model — this part is still a work in progress, right now the button just shows a "coming soon" message, the actual camera + ML part isn't fully connected yet
 
-## 🤩 Don't forget to give ⭐ to this repository
-<img src="https://forthebadge.com/images/badges/built-with-love.svg">
-<img src="https://forthebadge.com/images/badges/made-with-kotlin.svg">
+## Tech stack
+
+- Kotlin
+- XML for layouts
+- Firebase Authentication
+- Room (SQLite) for local storage
+- TensorFlow Lite for the ingredient recognition model
+- Glide for loading images
+
+## Project structure
+
+- `LoginActivity` / `RegisterActivity` – login and signup screens
+- `HomeActivity` – main homepage
+- `CategoryActivity` / `SearchActivity` – browsing and searching recipes
+- `RecipeActivity` – recipe details page
+- `ScanIngredientsActivity` – where the ingredient scanning feature will live
+- `AppDatabase` / `Dao` / `Recipe` – the Room database setup
+
+## How to run it
+
+1. Clone this repo and open it in Android Studio
+2. You'll need your own `google-services.json` file from Firebase (create a project, register an Android app with package name `com.practice.recipesapp`, and download the file into the `app/` folder)
+3. Let Gradle sync, then run it on an emulator or your phone
+
+## Still working on
+
+- Adding a favorites/bookmark feature
+- Adding more recipes to the database
+
+## Note
+
+This was originally built following a tutorial as a starting point to learn Android development, then I extended it with my own features (Firebase auth, Room database, and the TensorFlow Lite ingredient scanning idea) for my capstone project.
