@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Recipes App</string>
+    <string name="save_and_apply">Save and Apply</string>
+</resources>
